@@ -31,6 +31,8 @@ require File.expand_path('../../../../spec_helper', __FILE__)
 describe Api::V2::PlanningElementJournalsController do
   let(:project) { FactoryGirl.create(:project, :is_public => false) }
 
+  before { Setting.stub!(:rest_api_enabled?).and_return true }
+
   describe 'index.xml' do
     def fetch
       planning_element = FactoryGirl.create(:work_package,

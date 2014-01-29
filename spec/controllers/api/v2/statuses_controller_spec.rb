@@ -34,6 +34,8 @@ describe Api::V2::StatusesController do
   let(:status)     {FactoryGirl.create(:status)}
 
   before do
+    Setting.stub!(:rest_api_enabled?).and_return true
+
     User.stub(:current).and_return valid_user
   end
 

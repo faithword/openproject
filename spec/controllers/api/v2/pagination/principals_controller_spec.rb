@@ -32,5 +32,7 @@ require_relative 'pagination_spec_helper'
 describe Api::V2::Pagination::PrincipalsController do
   extend Api::V2::Pagination::PaginationSpecHelper
 
+  before { Setting.stub!(:rest_api_enabled?).and_return true }
+
   paginating_index_action Principal, :active_or_registered_like
 end

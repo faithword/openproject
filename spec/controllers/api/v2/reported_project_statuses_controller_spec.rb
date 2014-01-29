@@ -37,6 +37,8 @@ describe Api::V2::ReportedProjectStatusesController do
   end
 
   before do
+    Setting.stub!(:rest_api_enabled?).and_return true
+
     User.stub(:current).and_return valid_user
   end
 

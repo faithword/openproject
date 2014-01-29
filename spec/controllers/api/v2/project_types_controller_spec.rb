@@ -32,6 +32,8 @@ describe Api::V2::ProjectTypesController do
   let(:current_user) { FactoryGirl.create(:admin) }
 
   before do
+    Setting.stub!(:rest_api_enabled?).and_return true
+
     User.stub(:current).and_return current_user
   end
 

@@ -96,6 +96,8 @@ describe Api::V2::PlanningElementsController do
   end
 
   before do
+    Setting.stub!(:rest_api_enabled?).and_return true
+
     User.stub(:current).and_return current_user
 
     FactoryGirl.create :priority, is_default: true
