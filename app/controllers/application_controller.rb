@@ -79,7 +79,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  before_filter :user_setup,
+  before_filter :check_rest_api_availability,
+                :user_setup,
                 :check_if_login_required,
                 :log_requesting_user,
                 :reset_i18n_fallbacks,
@@ -129,6 +130,10 @@ class ApplicationController < ActionController::Base
     User.current
   end
   helper_method :current_user
+
+  def check_rest_api_availability
+    render_403 if api_request? and not Setting.rest_api_enabled?
+  end
 
   def user_setup
     # Find the current user
