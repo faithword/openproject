@@ -42,6 +42,7 @@ Feature: General Reporting adminstration
 
   @javascript
   Scenario: Creating a reporting
+    Given the rest api is enabled
      When I go to the page of the project called "Santas Project"
       And I toggle the "Timelines" submenu
       And I click on "Status reportings"
@@ -55,6 +56,7 @@ Feature: General Reporting adminstration
 
   @javascript
   Scenario: Creating a reporting when there is a reporting already present
+    Given the rest api is enabled
     Given there are the following reportings:
           | Project        | Reporting To Project | Reported Project Status Comment |
           | Santas Project | World Domination     | Hallo Junge                     |

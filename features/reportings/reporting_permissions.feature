@@ -98,6 +98,7 @@ Feature: Reporting Permissions
 
   @javascript
   Scenario: Creating a reporting by a privileged user
+    Given the rest api is enabled
      When I am already logged in as "privileged"
       And I go to the page of the project called "Santas Project"
       And I toggle the "Timelines" submenu

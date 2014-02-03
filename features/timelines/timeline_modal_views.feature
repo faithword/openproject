@@ -14,6 +14,8 @@ Feature: Timeline View Tests
 	I want edit planning elements via a modal window
 
   Background:
+    Given the rest api is enabled
+
     Given there are the following types:
           | Name      | Is Milestone | In aggregation |
           | Phase     | false        | true           |

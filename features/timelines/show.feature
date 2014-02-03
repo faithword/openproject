@@ -29,6 +29,8 @@
 Feature: View work packages in a timeline
 
   Background:
+    Given the rest api is enabled
+
     Given there is 1 user with:
           | login | manager |
 

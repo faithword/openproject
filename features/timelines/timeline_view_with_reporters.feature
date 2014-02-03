@@ -32,6 +32,8 @@ Feature: Timeline View Tests with reporters
   Filter the projects on given criteria
 
   Background:
+    Given the rest api is enabled
+
     Given there are the following types:
           | Name      | Is Milestone | In aggregation |
           | Phase1    | false        | true           |

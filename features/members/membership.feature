@@ -53,6 +53,7 @@ Feature: Membership
 
   @javascript
   Scenario: Adding and Removing a Group as Member, non impaired
+    Given the rest api is enabled
      When I go to the members tab of the settings page of the project "project1"
       And I add the principal "A-Team" as "Manager"
      Then I should be on the members tab of the settings page of the project "project1"
@@ -65,6 +66,7 @@ Feature: Membership
 
   @javascript
   Scenario: Adding and removing a User as Member, non impaired
+    Given the rest api is enabled
      When I go to the members tab of the settings page of the project "project1"
       And I add the principal "Hannibal Smith" as "Manager"
      Then I should see "Successful creation." within ".flash.notice"
@@ -76,12 +78,14 @@ Feature: Membership
 
   @javascript
   Scenario: Entering a Username as Member in firstname, lastname order, non impaired
+    Given the rest api is enabled
      When I go to the members tab of the settings page of the project "project1"
       And I enter the principal name "Hannibal S"
       Then I should see "Hannibal Smith"
 
   @javascript
   Scenario: Entering a Username as Member in lastname, firstname order, non impaired
+    Given the rest api is enabled
      When I go to the members tab of the settings page of the project "project1"
       And I enter the principal name "Smith, H"
       Then I should see "Hannibal Smith"
@@ -97,6 +101,7 @@ Feature: Membership
 
   @javascript
   Scenario: User should not appear in members form if he/she is already a member of the project, impaired
+    Given the rest api is enabled
      When I am impaired
       And I go to the members tab of the settings page of the project "project1"
       And I add the principal "A-Team" as "Manager"

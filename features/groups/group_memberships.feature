@@ -55,6 +55,7 @@ Feature: Group Memberships
 
   @javascript
   Scenario: Adding a group to a project on the project's page adds the group members as well
+    Given the rest api is enabled
      When I go to the settings page of the project called "Project1"
       And I click on "tab-members"
       And I add the principal "A-Team" as a member with the roles:
@@ -66,6 +67,7 @@ Feature: Group Memberships
 
   @javascript
   Scenario: Group-based memberships and individual memberships are handled separately
+    Given the rest api is enabled
      When I go to the settings page of the project called "Project1"
       And I click on "tab-members"
       And I add the principal "Hannibal Smith" as a member with the roles:
@@ -88,6 +90,7 @@ Feature: Group Memberships
 
   @javascript
   Scenario: Removing a group from a project on the project's page removes all group members as well
+    Given the rest api is enabled
      When I go to the settings page of the project called "Project1"
       And I click on "tab-members"
       And I add the principal "A-Team" as a member with the roles:

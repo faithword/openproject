@@ -49,6 +49,7 @@ Feature: Group memberships
 
   @javascript
   Scenario: Adding a group with members to a project
+    Given the rest api is enabled
     Given the group "group1" has the following members:
       | alice     |
     And I am already logged in as "bob"

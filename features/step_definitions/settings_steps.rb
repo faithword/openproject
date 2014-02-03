@@ -29,7 +29,7 @@
 Given /^the rest api is enabled$/ do
   Setting.rest_api_enabled = "1"
 
-  Support::Cleanup.to_clean Support::ClearCache.clear
+  Support::ClearCache.clear_after
 end
 
 Given /^the following languages are available:$/ do |table|

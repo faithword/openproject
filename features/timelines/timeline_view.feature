@@ -59,6 +59,7 @@ Feature: Timeline View Tests
 
   @javascript
   Scenario: name column width
+    Given the rest api is enabled
      When there is a timeline "Testline" for project "ecookbook"
       And I go to the page of the timeline "Testline" of the project called "ecookbook"
       And I wait for timeline to load table
@@ -66,6 +67,7 @@ Feature: Timeline View Tests
 
   @javascript
   Scenario: Select columns
+    Given the rest api is enabled
     Given I am working in the timeline "Testline" of the project called "ecookbook"
     When there is a timeline "Testline" for project "ecookbook"
       And I set the columns shown in the timeline to:

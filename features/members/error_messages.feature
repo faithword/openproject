@@ -94,6 +94,7 @@ Feature: Error Messages
 
   @javascript
   Scenario: Removing old error or success messages when adding members
+    Given the rest api is enabled
     Given there is 1 User with:
       | Login     | tinkerbell |
       | Firstname | Tinker     |

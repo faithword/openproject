@@ -92,6 +92,7 @@ Feature: Timeline Wiki Macro
 
   @javascript
   Scenario: Adding a timeline to a wiki
+    Given the rest api is enabled
     Given I am already logged in as "mrtimeline"
     When I go to the wiki page "macro_testing" for the project called "ecookbook"
     And I fill in a wiki macro for timeline "Testline" for "content_text"

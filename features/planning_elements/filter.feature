@@ -28,6 +28,7 @@
 
 Feature: Filtering work packages via the api
   Background:
+    Given the rest api is enabled
     Given there is 1 project with the following:
       | identifier | sample_project |
       | name       | sample_project |

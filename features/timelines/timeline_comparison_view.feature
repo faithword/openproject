@@ -28,6 +28,8 @@
 
 Feature: Timeline Comparison View Tests
   Background:
+    Given the rest api is enabled
+
     Given there is 1 user with:
           | login | manager |
       And there is a role "manager"

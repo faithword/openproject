@@ -31,6 +31,8 @@ Feature: Timeline view with filter tests
 	I want to view filtered timelines
 
   Background:
+    Given the rest api is enabled
+
     Given there is 1 user with:
           | login | manager |
 

@@ -142,6 +142,7 @@ Feature: Project Association Management
 
   @javascript
   Scenario: Editor is able to add associations
+    Given the rest api is enabled
     Given I am already logged in as "Editor"
      When I go to the   page of the project called "My Project"
       And I toggle the "Timelines" submenu
