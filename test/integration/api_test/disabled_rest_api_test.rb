@@ -53,7 +53,7 @@ class ApiTest::DisabledRestApiTest < ActionDispatch::IntegrationTest
           get "/api/v1/news.xml?key=#{@token.value}"
         end
 
-        should respond_with :unauthorized
+        should respond_with :forbidden
         should_respond_with_content_type "application/xml"
         should "not login as the user" do
           assert_equal User.anonymous, User.current
@@ -67,7 +67,7 @@ class ApiTest::DisabledRestApiTest < ActionDispatch::IntegrationTest
           get "/api/v1/news.xml", nil, :authorization => @authorization
         end
 
-        should respond_with :unauthorized
+        should respond_with :forbidden
         should_respond_with_content_type "application/xml"
         should "not login as the user" do
           assert_equal User.anonymous, User.current
@@ -82,7 +82,7 @@ class ApiTest::DisabledRestApiTest < ActionDispatch::IntegrationTest
           get "/api/v1/news.xml", nil, :authorization => @authorization
         end
 
-        should respond_with :unauthorized
+        should respond_with :forbidden
         should_respond_with_content_type "application/xml"
         should "not login as the user" do
           assert_equal User.anonymous, User.current
@@ -98,7 +98,7 @@ class ApiTest::DisabledRestApiTest < ActionDispatch::IntegrationTest
           get "/api/v1/news.json?key=#{@token.value}"
         end
 
-        should respond_with :unauthorized
+        should respond_with :forbidden
         should_respond_with_content_type "application/json"
         should "not login as the user" do
           assert_equal User.anonymous, User.current
@@ -112,7 +112,7 @@ class ApiTest::DisabledRestApiTest < ActionDispatch::IntegrationTest
           get "/api/v1/news.json", nil, :authorization => @authorization
         end
 
-        should respond_with :unauthorized
+        should respond_with :forbidden
         should_respond_with_content_type "application/json"
         should "not login as the user" do
           assert_equal User.anonymous, User.current
@@ -127,7 +127,7 @@ class ApiTest::DisabledRestApiTest < ActionDispatch::IntegrationTest
           get "/api/v1/news.json", nil, :authorization => @authorization
         end
 
-        should respond_with :unauthorized
+        should respond_with :forbidden
         should_respond_with_content_type "application/json"
         should "not login as the user" do
           assert_equal User.anonymous, User.current
