@@ -30,11 +30,7 @@ require 'spec_helper'
 
 describe Api::V2::UsersController do
 
-  before do
-    Setting.stub!(:rest_api_enabled?).and_return true
-
-    User.stub(:current).and_return current_user
-  end
+  before { Setting.stub!(:rest_api_enabled?).and_return true }
 
   shared_context "As an admin" do
     let(:current_user) { FactoryGirl.create(:admin) }
