@@ -31,7 +31,11 @@ require File.expand_path('../../../../spec_helper', __FILE__)
 describe Api::V2::WorkPackagePrioritiesController do
   let(:current_user) { FactoryGirl.create(:admin) }
 
-  before { User.stub(:current).and_return current_user }
+  before do
+    Setting.stub!(:rest_api_enabled?).and_return true
+
+    User.stub(:current).and_return current_user
+  end
 
   describe '#index' do
     shared_examples_for 'valid work package priority index request' do
